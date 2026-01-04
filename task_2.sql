@@ -54,11 +54,12 @@ CREATE TABLE order_details (
     order_detail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
     book_id INT NOT NULL,
-    quantity INT NOT NULL DEFAULT 1,
+      quantity INT NOT NULL DEFAULT 1,
     CONSTRAINT fk_orderdetails_order FOREIGN KEY (order_id) REFERENCES orders(order_id),
     CONSTRAINT fk_orderdetails_book FOREIGN KEY (book_id) REFERENCES books(book_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     quantity INT NOT NULL,
     FOREIGN KEY (order_id) REFERENCES orders(order_id),
     FOREIGN KEY (book_id) REFERENCES books(book_id)
+);
 );
